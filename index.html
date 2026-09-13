@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VIDHIKHOJ - Indian Legal Research</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    color: #172033;
+}
+
+header {
+    background: #0b1f3a;
+    color: white;
+    padding: 18px 6%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.tagline {
+    font-size: 12px;
+    color: #d6dce5;
+    margin-top: 4px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 18px;
+    font-size: 14px;
+}
+
+.hero {
+    background: linear-gradient(135deg, #0b1f3a, #173f6b);
+    color: white;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 17px;
+    margin-bottom: 28px;
+    color: #e3eaf3;
+}
+
+.search-box {
+    max-width: 700px;
+    margin: auto;
+    display: flex;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 17px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+
+.search-box button {
+    background: #d49a2a;
+    color: white;
+    border: none;
+    padding: 0 25px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 45px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.section-title h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.section-title p {
+    color: #667085;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 28px 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.icon {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #667085;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.latest {
+    margin-top: 50px;
+}
+
+.latest-box {
+    background: white;
+    padding: 20px;
+    margin-bottom: 12px;
+    border-left: 4px solid #d49a2a;
+    border-radius: 5px;
+}
+
+.latest-box h3 {
+    margin-bottom: 6px;
+}
+
+.latest-box p {
+    color: #667085;
+    font-size: 14px;
+}
+
+footer {
+    background: #0b1f3a;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 60px;
+}
+
+footer p {
+    font-size: 13px;
+    color: #cbd5e1;
+}
+
+@media(max-width: 700px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    nav {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav a {
+        margin: 5px;
+        display: inline-block;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="navbar">
+
+        <div>
+            <div class="logo">VIDHIKHOJ</div>
+            <div class="tagline">
+                Search • Research • Understand the Law
+            </div>
+        </div>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Judgments</a>
+            <a href="#">Bare Acts</a>
+            <a href="#">Case Search</a>
+            <a href="#">Articles</a>
+        </nav>
+
+    </div>
+</header>
+
+<section class="hero">
+
+    <h1>VIDHIKHOJ</h1>
+
+    <p>
+        India's Legal Research & Knowledge Platform
+    </p>
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search Judgments, Acts, Sections & Cases"
+        >
+
+        <button onclick="searchLaw()">
+            Search
+        </button>
+
+    </div>
+
+</section>
+
+<section class="container">
+
+    <div class="section-title">
+        <h2>Explore Indian Law</h2>
+        <p>Find legal information in one place</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">⚖️</div>
+            <h3>Supreme Court</h3>
+            <p>
+                Search Supreme Court judgments,
+                cases and important decisions.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🏛️</div>
+            <h3>High Courts</h3>
+            <p>
+                Explore judgments and decisions
+                from High Courts of India.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📚</div>
+            <h3>Bare Acts</h3>
+            <p>
+                Browse Acts, Sections and
+                important statutory provisions.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🔎</div>
+            <h3>Case Search</h3>
+            <p>
+                Search cases by case name,
+                citation, section or subject.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📝</div>
+            <h3>Case Notes</h3>
+            <p>
+                Understand important judgments
+                through simple case notes.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📖</div>
+            <h3>Legal Articles</h3>
+            <p>
+                Read legal research, explanations
+                and law-student friendly articles.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="latest">
+
+        <div class="section-title">
+            <h2>Latest Legal Research</h2>
+            <p>Important cases and legal developments</p>
+        </div>
+
+        <div class="latest-box">
+            <h3>Supreme Court Judgments</h3>
+            <p>
+                Important judgments will appear here.
+            </p>
+        </div>
+
+        <div class="latest-box">
+            <h3>Landmark Cases</h3>
+            <p>
+                Landmark Supreme Court decisions and
+                simplified case notes.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <h3>VIDHIKHOJ</h3>
+
+    <p>
+        Search • Research • Understand the Law
+    </p>
+
+    <p style="margin-top:10px;">
+        © 2026 VIDHIKHOJ. All Rights Reserved.
+    </p>
+
+</footer>
+
+<script>
+
+function searchLaw() {
+
+    let query =
+        document.getElementById("searchInput").value;
+
+    if (query.trim() === "") {
+
+        alert("Please enter a judgment, Act, section or case name.");
+
+    } else {
+
+        alert(
+            "VIDHIKHOJ Search: " + query +
+            "\n\nSearch system will be connected later."
+        );
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
