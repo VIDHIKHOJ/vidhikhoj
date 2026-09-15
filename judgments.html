@@ -3,74 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIDHIKHOJ - Supreme Court Judgments</title>
+
+    <title>Supreme Court Judgments | VIDHIKHOJ</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            background: #f5f5f5;
-            color: #222;
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            color: #172033;
         }
 
         header {
-            background: #111827;
+            background: #0b2342;
             color: white;
-            padding: 25px;
+            padding: 25px 20px;
             text-align: center;
         }
 
         header h1 {
             margin: 0;
-            font-size: 30px;
+            font-size: 32px;
         }
 
         header p {
             margin: 8px 0 0;
+            font-size: 16px;
+            color: #d9e2f0;
+        }
+
+        nav {
+            background: #102d50;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 17px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
         }
 
         .container {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+            padding: 30px 20px;
         }
 
-        .judgment {
-            background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        .title {
+            text-align: center;
+            margin-bottom: 25px;
         }
 
-        .judgment h2 {
-            margin-top: 0;
-            color: #1d4ed8;
+        .title h2 {
+            font-size: 32px;
+            margin-bottom: 8px;
         }
 
-        .judgment p {
-            line-height: 1.6;
+        .title p {
+            color: #667085;
+            font-size: 17px;
         }
 
-        .button {
-            display: inline-block;
-            background: #1d4ed8;
+        .search-box {
+            display: flex;
+            margin: 25px auto 35px;
+            max-width: 700px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px 0 0 8px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-box button {
+            padding: 16px 25px;
+            border: none;
+            background: #d99b24;
             color: white;
-            padding: 10px 16px;
+            font-size: 16px;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+        }
+
+        .search-box button:hover {
+            background: #bd8419;
+        }
+
+        .filters {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .filters button {
+            margin: 5px;
+            padding: 10px 18px;
+            border: 1px solid #0b2342;
+            background: white;
+            color: #0b2342;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .filters button:hover {
+            background: #0b2342;
+            color: white;
+        }
+
+        .judgment-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .judgment-card h3 {
+            margin-top: 0;
+            color: #0b2342;
+            font-size: 23px;
+        }
+
+        .citation {
+            color: #b07800;
+            font-weight: bold;
+        }
+
+        .details {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #eaf0f8;
+            color: #0b2342;
+            padding: 6px 12px;
+            border-radius: 15px;
+            margin: 4px;
+            font-size: 13px;
+        }
+
+        .read-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 11px 18px;
+            background: #0b2342;
+            color: white;
             text-decoration: none;
             border-radius: 6px;
         }
 
-        .button:hover {
-            background: #1e40af;
+        .read-btn:hover {
+            background: #163d69;
         }
 
         footer {
-            text-align: center;
-            padding: 20px;
-            background: #111827;
-            color: white;
             margin-top: 40px;
+            background: #0b2342;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 27px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 7px;
+                font-size: 15px;
+            }
+
+            .title h2 {
+                font-size: 27px;
+            }
+
+            .search-box input {
+                min-width: 0;
+            }
+
+            .search-box button {
+                padding: 14px;
+            }
+
+            .judgment-card {
+                padding: 20px;
+            }
+
+            .judgment-card h3 {
+                font-size: 20px;
+            }
         }
     </style>
 </head>
@@ -79,40 +218,223 @@
 
 <header>
     <h1>VIDHIKHOJ</h1>
-    <p>Supreme Court Judgments & Legal Research</p>
+    <p>Search • Research • Understand the Law</p>
 </header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="judgments.html">Judgments</a>
+    <a href="#">Bare Acts</a>
+    <a href="#">Case Search</a>
+    <a href="#">Articles</a>
+</nav>
 
 <div class="container">
 
-    <div class="judgment">
-        <h2>Shreya Singhal v. Union of India</h2>
+    <div class="title">
+        <h2>Supreme Court Judgments</h2>
+        <p>Search and explore important judgments of the Supreme Court of India</p>
+    </div>
 
-        <p>
+    <div class="search-box">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search case name, citation, subject..."
+        >
+
+        <button onclick="searchJudgments()">Search</button>
+    </div>
+
+    <div class="filters">
+        <button onclick="filterJudgments('all')">All</button>
+        <button onclick="filterJudgments('constitutional')">
+            Constitutional
+        </button>
+        <button onclick="filterJudgments('criminal')">
+            Criminal
+        </button>
+        <button onclick="filterJudgments('civil')">
+            Civil
+        </button>
+        <button onclick="filterJudgments('landmark')">
+            Landmark
+        </button>
+    </div>
+
+    <!-- Judgment 1 -->
+
+    <div class="judgment-card"
+         data-category="constitutional landmark">
+
+        <h3>
+            Shreya Singhal v. Union of India
+        </h3>
+
+        <p class="citation">
+            AIR 2015 SC 1523
+        </p>
+
+        <p class="details">
             <strong>Date:</strong> 24 March 2015
         </p>
 
-        <p>
-            <strong>Citation:</strong> AIR 2015 SC 1523
+        <p class="details">
+            <strong>Subject:</strong>
+            Freedom of Speech and Expression, Article 19(1)(a),
+            Information Technology Act, Section 66A.
         </p>
 
-        <p>
-            This landmark Supreme Court judgment dealt with
-            Section 66A of the Information Technology Act, 2000
-            and its constitutional validity in relation to
-            freedom of speech and expression under Article 19(1)(a)
-            of the Constitution of India.
+        <span class="tag">Constitutional Law</span>
+        <span class="tag">Article 19</span>
+        <span class="tag">IT Act</span>
+        <span class="tag">Landmark Judgment</span>
+
+        <p class="details">
+            The Supreme Court considered the constitutional validity
+            of Section 66A of the Information Technology Act, 2000
+            in relation to freedom of speech and expression.
         </p>
 
-        <a class="button" href="#">
+        <a class="read-btn" href="#">
             Read Judgment
         </a>
+
+    </div>
+
+
+    <!-- Judgment 2 -->
+
+    <div class="judgment-card"
+         data-category="constitutional landmark">
+
+        <h3>
+            Kesavananda Bharati v. State of Kerala
+        </h3>
+
+        <p class="citation">
+            (1973) 4 SCC 225
+        </p>
+
+        <p class="details">
+            <strong>Subject:</strong>
+            Basic Structure Doctrine and Constitutional Amendments.
+        </p>
+
+        <span class="tag">Constitutional Law</span>
+        <span class="tag">Basic Structure</span>
+        <span class="tag">Landmark Judgment</span>
+
+        <p class="details">
+            The Supreme Court evolved the Basic Structure Doctrine,
+            holding that Parliament's power to amend the Constitution
+            is subject to limitations.
+        </p>
+
+        <a class="read-btn" href="#">
+            Read Judgment
+        </a>
+
+    </div>
+
+
+    <!-- Judgment 3 -->
+
+    <div class="judgment-card"
+         data-category="criminal landmark">
+
+        <h3>
+            Bachan Singh v. State of Punjab
+        </h3>
+
+        <p class="citation">
+            (1980) 2 SCC 684
+        </p>
+
+        <p class="details">
+            <strong>Subject:</strong>
+            Death Penalty and the "Rarest of Rare" Doctrine.
+        </p>
+
+        <span class="tag">Criminal Law</span>
+        <span class="tag">Death Penalty</span>
+        <span class="tag">Landmark Judgment</span>
+
+        <p class="details">
+            The Supreme Court laid down important principles governing
+            the imposition of the death penalty in India.
+        </p>
+
+        <a class="read-btn" href="#">
+            Read Judgment
+        </a>
+
     </div>
 
 </div>
 
+
 <footer>
-    © 2026 VIDHIKHOJ | Legal Information Platform
+    <p>© 2026 VIDHIKHOJ</p>
+    <p>Legal Research & Knowledge Platform</p>
 </footer>
+
+
+<script>
+
+function searchJudgments() {
+
+    let input =
+        document.getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+    let cards =
+        document.querySelectorAll(".judgment-card");
+
+    cards.forEach(function(card) {
+
+        let text =
+            card.innerText.toLowerCase();
+
+        if (text.includes(input)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+}
+
+
+function filterJudgments(category) {
+
+    let cards =
+        document.querySelectorAll(".judgment-card");
+
+    cards.forEach(function(card) {
+
+        if (category === "all") {
+
+            card.style.display = "block";
+
+        } else {
+
+            let categories =
+                card.dataset.category;
+
+            if (categories.includes(category)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+
+        }
+
+    });
+}
+
+</script>
 
 </body>
 </html>
