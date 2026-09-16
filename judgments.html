@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <title>Supreme Court Judgments | VIDHIKHOJ</title>
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -21,7 +23,7 @@
         header {
             background: #0b2342;
             color: white;
-            padding: 25px 20px;
+            padding: 28px 20px;
             text-align: center;
         }
 
@@ -32,8 +34,8 @@
 
         header p {
             margin: 8px 0 0;
-            font-size: 16px;
             color: #d9e2f0;
+            font-size: 16px;
         }
 
         nav {
@@ -65,7 +67,7 @@
         }
 
         .title h2 {
-            font-size: 32px;
+            font-size: 30px;
             margin-bottom: 8px;
         }
 
@@ -76,13 +78,13 @@
 
         .search-box {
             display: flex;
-            margin: 25px auto 35px;
             max-width: 700px;
+            margin: 25px auto 30px;
         }
 
         .search-box input {
             flex: 1;
-            padding: 16px;
+            padding: 15px;
             border: 1px solid #ccc;
             border-radius: 8px 0 0 8px;
             font-size: 16px;
@@ -90,17 +92,13 @@
         }
 
         .search-box button {
-            padding: 16px 25px;
+            padding: 15px 22px;
             border: none;
             background: #d99b24;
             color: white;
             font-size: 16px;
             border-radius: 0 8px 8px 0;
             cursor: pointer;
-        }
-
-        .search-box button:hover {
-            background: #bd8419;
         }
 
         .filters {
@@ -133,134 +131,135 @@
 
         .judgment-card h3 {
             margin-top: 0;
-            color: #0b2342;
             font-size: 23px;
         }
 
+        .case-link {
+            color: #0b2342;
+            text-decoration: none;
+        }
+
+        .case-link:hover {
+            text-decoration: underline;
+        }
+
         .citation {
-            color: #b07800;
             font-weight: bold;
+            color: #667085;
         }
 
         .details {
-            color: #555;
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
         .tag {
             display: inline-block;
-            background: #eaf0f8;
+            background: #eef2f7;
             color: #0b2342;
-            padding: 6px 12px;
+            padding: 6px 10px;
             border-radius: 15px;
-            margin: 4px;
+            margin: 3px;
             font-size: 13px;
         }
 
         .read-btn {
             display: inline-block;
-            margin-top: 15px;
+            margin-top: 12px;
             padding: 11px 18px;
             background: #0b2342;
             color: white;
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 7px;
         }
 
         .read-btn:hover {
-            background: #163d69;
+            background: #163e6d;
         }
 
         footer {
-            margin-top: 40px;
             background: #0b2342;
             color: white;
             text-align: center;
             padding: 25px;
+            margin-top: 40px;
         }
 
-        @media (max-width: 600px) {
-
-            header h1 {
-                font-size: 27px;
-            }
-
-            nav a {
-                display: inline-block;
-                margin: 7px;
-                font-size: 15px;
-            }
-
-            .title h2 {
-                font-size: 27px;
-            }
-
-            .search-box input {
-                min-width: 0;
-            }
-
-            .search-box button {
-                padding: 14px;
-            }
-
-            .judgment-card {
-                padding: 20px;
-            }
-
-            .judgment-card h3 {
-                font-size: 20px;
-            }
-        }
     </style>
 </head>
+
 
 <body>
 
 <header>
+
     <h1>VIDHIKHOJ</h1>
-    <p>Search • Research • Understand the Law</p>
+
+    <p>Supreme Court Judgments</p>
+
 </header>
 
+
 <nav>
+
     <a href="index.html">Home</a>
-    <a href="judgments.html">Judgments</a>
-    <a href="#">Bare Acts</a>
-    <a href="#">Case Search</a>
-    <a href="#">Articles</a>
+
+    <a href="judgments.html">Supreme Court Judgments</a>
+
 </nav>
+
 
 <div class="container">
 
     <div class="title">
+
         <h2>Supreme Court Judgments</h2>
-        <p>Search and explore important judgments of the Supreme Court of India</p>
+
+        <p>
+            Search and explore important Supreme Court judgments.
+        </p>
+
     </div>
 
+
+    <!-- Search -->
+
     <div class="search-box">
+
         <input
             type="text"
             id="searchInput"
-            placeholder="Search case name, citation, subject..."
-        >
+            placeholder="Search judgment, case name or subject..."
+            onkeyup="searchJudgments()">
 
-        <button onclick="searchJudgments()">Search</button>
+        <button onclick="searchJudgments()">
+            Search
+        </button>
+
     </div>
 
+
+    <!-- Filters -->
+
     <div class="filters">
-        <button onclick="filterJudgments('all')">All</button>
+
+        <button onclick="filterJudgments('all')">
+            All
+        </button>
+
         <button onclick="filterJudgments('constitutional')">
-            Constitutional
+            Constitutional Law
         </button>
+
         <button onclick="filterJudgments('criminal')">
-            Criminal
+            Criminal Law
         </button>
-        <button onclick="filterJudgments('civil')">
-            Civil
-        </button>
+
         <button onclick="filterJudgments('landmark')">
             Landmark
         </button>
+
     </div>
+
 
     <!-- Judgment 1 -->
 
@@ -268,67 +267,150 @@
          data-category="constitutional landmark">
 
         <h3>
-            Shreya Singhal v. Union of India
+
+            <a class="case-link"
+               href="https://indiankanoon.org/doc/110813550/"
+               target="_blank">
+
+                Shreya Singhal v. Union of India
+
+            </a>
+
         </h3>
+
 
         <p class="citation">
             AIR 2015 SC 1523
         </p>
 
-        <p class="details">
-            <strong>Date:</strong> 24 March 2015
-        </p>
 
         <p class="details">
+
+            <strong>Date:</strong>
+            24 March 2015
+
+        </p>
+
+
+        <p class="details">
+
             <strong>Subject:</strong>
-            Freedom of Speech and Expression, Article 19(1)(a),
-            Information Technology Act, Section 66A.
+
+            Freedom of Speech and Expression,
+            Article 19(1)(a),
+            Information Technology Act,
+            Section 66A.
+
         </p>
 
-        <span class="tag">Constitutional Law</span>
-        <span class="tag">Article 19</span>
-        <span class="tag">IT Act</span>
-        <span class="tag">Landmark Judgment</span>
+
+        <span class="tag">
+            Constitutional Law
+        </span>
+
+        <span class="tag">
+            Article 19
+        </span>
+
+        <span class="tag">
+            IT Act
+        </span>
+
+        <span class="tag">
+            Landmark Judgment
+        </span>
+
 
         <p class="details">
-            The Supreme Court considered the constitutional validity
-            of Section 66A of the Information Technology Act, 2000
-            in relation to freedom of speech and expression.
+
+            The Supreme Court considered the constitutional
+            validity of Section 66A of the Information Technology
+            Act, 2000 in relation to freedom of speech and
+            expression.
+
         </p>
 
-        <a class="read-btn" <a class="read-btn"
-   href="https://indiankanoon.org/doc/110813550/"
-   target="_blank">
-    Read Judgment
-        </a>
+
+        <a class="read-btn"
+           href="https://indiankanoon.org/doc/110813550/"
+           target="_blank">
+
             Read Judgment
+
         </a>
 
     </div>
+
+
+    <!-- Judgment 2 -->
+
+    <div class="judgment-card"
+         data-category="constitutional landmark">
+
+        <h3>
+
+            <a class="case-link"
+               href="https://indiankanoon.org/doc/257876/"
+               target="_blank">
+
+                Kesavananda Bharati v. State of Kerala
+
+            </a>
+
+        </h3>
+
 
         <p class="citation">
             (1973) 4 SCC 225
         </p>
 
+
         <p class="details">
+
+            <strong>Date:</strong>
+            24 April 1973
+
+        </p>
+
+
+        <p class="details">
+
             <strong>Subject:</strong>
-            Basic Structure Doctrine and Constitutional Amendments.
+
+            Basic Structure Doctrine and
+            Constitutional Amendments.
+
         </p>
 
-        <span class="tag">Constitutional Law</span>
-        <span class="tag">Basic Structure</span>
-        <span class="tag">Landmark Judgment</span>
+
+        <span class="tag">
+            Constitutional Law
+        </span>
+
+        <span class="tag">
+            Basic Structure
+        </span>
+
+        <span class="tag">
+            Landmark Judgment
+        </span>
+
 
         <p class="details">
-            The Supreme Court evolved the Basic Structure Doctrine,
-            holding that Parliament's power to amend the Constitution
-            is subject to limitations.
+
+            The Supreme Court evolved the Basic Structure
+            Doctrine concerning the power to amend the
+            Constitution.
+
         </p>
+
 
         <a class="read-btn"
            href="https://indiankanoon.org/doc/257876/"
            target="_blank">
+
             Read Judgment
+
         </a>
 
     </div>
@@ -340,41 +422,86 @@
          data-category="criminal landmark">
 
         <h3>
-            Bachan Singh v. State of Punjab
+
+            <a class="case-link"
+               href="https://indiankanoon.org/doc/307021/"
+               target="_blank">
+
+                Bachan Singh v. State of Punjab
+
+            </a>
+
         </h3>
+
 
         <p class="citation">
             (1980) 2 SCC 684
         </p>
 
+
         <p class="details">
+
+            <strong>Date:</strong>
+            9 May 1980
+
+        </p>
+
+
+        <p class="details">
+
             <strong>Subject:</strong>
-            Death Penalty and the "Rarest of Rare" Doctrine.
+
+            Death Penalty and the
+            "Rarest of Rare" Doctrine.
+
         </p>
 
-        <span class="tag">Criminal Law</span>
-        <span class="tag">Death Penalty</span>
-        <span class="tag">Landmark Judgment</span>
+
+        <span class="tag">
+            Criminal Law
+        </span>
+
+        <span class="tag">
+            Death Penalty
+        </span>
+
+        <span class="tag">
+            Landmark Judgment
+        </span>
+
 
         <p class="details">
-            The Supreme Court laid down important principles governing
-            the imposition of the death penalty in India.
+
+            The Supreme Court laid down important principles
+            governing the imposition of the death penalty.
+
         </p>
+
 
         <a class="read-btn"
            href="https://indiankanoon.org/doc/307021/"
            target="_blank">
+
             Read Judgment
+
         </a>
 
     </div>
+
 
 </div>
 
 
 <footer>
-    <p>© 2026 VIDHIKHOJ</p>
-    <p>Legal Research & Knowledge Platform</p>
+
+    <p>
+        © 2026 VIDHIKHOJ
+    </p>
+
+    <p>
+        Legal Research & Knowledge Platform
+    </p>
+
 </footer>
 
 
@@ -396,12 +523,17 @@ function searchJudgments() {
             card.innerText.toLowerCase();
 
         if (text.includes(input)) {
+
             card.style.display = "block";
+
         } else {
+
             card.style.display = "none";
+
         }
 
     });
+
 }
 
 
@@ -422,9 +554,13 @@ function filterJudgments(category) {
                 card.dataset.category;
 
             if (categories.includes(category)) {
+
                 card.style.display = "block";
+
             } else {
+
                 card.style.display = "none";
+
             }
 
         }
@@ -435,5 +571,7 @@ function filterJudgments(category) {
 
 </script>
 
+
 </body>
+
 </html>
