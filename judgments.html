@@ -3,9 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Supreme Court Judgments | VIDHIKHOJ</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>VIDHIKHOJ | Legal Research & Knowledge</title>
 
     <style>
 
@@ -23,471 +25,262 @@
         header {
             background: #0b2342;
             color: white;
-            padding: 28px 20px;
             text-align: center;
+            padding: 45px 20px;
         }
 
         header h1 {
             margin: 0;
-            font-size: 32px;
+            font-size: 42px;
         }
 
         header p {
-            margin: 8px 0 0;
+            margin-top: 10px;
+            font-size: 18px;
             color: #d9e2f0;
-            font-size: 16px;
         }
 
         nav {
             background: #102d50;
-            padding: 15px;
             text-align: center;
+            padding: 16px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
             margin: 0 12px;
-            font-size: 17px;
+            font-size: 16px;
         }
 
         nav a:hover {
             text-decoration: underline;
         }
 
+        .hero {
+            text-align: center;
+            padding: 55px 20px 35px;
+        }
+
+        .hero h2 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: #667085;
+            font-size: 18px;
+        }
+
         .container {
             max-width: 1000px;
             margin: auto;
-            padding: 30px 20px;
+            padding: 20px;
         }
 
-        .title {
+        .section-title {
             text-align: center;
-            margin-bottom: 25px;
+            font-size: 34px;
+            margin-top: 20px;
+            margin-bottom: 10px;
         }
 
-        .title h2 {
-            font-size: 30px;
-            margin-bottom: 8px;
+        .section-subtitle {
+            text-align: center;
+            color: #667085;
+            font-size: 18px;
+            margin-bottom: 35px;
         }
 
-        .title p {
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            display: block;
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+            border-left: 7px solid #d99b24;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+            text-decoration: none;
+            color: inherit;
+
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 25px;
+            color: #0b2342;
+        }
+
+        .card p {
             color: #667085;
             font-size: 17px;
+            line-height: 1.5;
         }
 
-        .search-box {
-            display: flex;
-            max-width: 700px;
-            margin: 25px auto 30px;
-        }
-
-        .search-box input {
-            flex: 1;
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 8px 0 0 8px;
-            font-size: 16px;
-            outline: none;
-        }
-
-        .search-box button {
-            padding: 15px 22px;
-            border: none;
-            background: #d99b24;
-            color: white;
-            font-size: 16px;
-            border-radius: 0 8px 8px 0;
-            cursor: pointer;
-        }
-
-        .filters {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .filters button {
-            margin: 5px;
-            padding: 10px 18px;
-            border: 1px solid #0b2342;
-            background: white;
+        .open-text {
+            display: inline-block;
+            margin-top: 10px;
             color: #0b2342;
-            border-radius: 20px;
-            cursor: pointer;
-        }
-
-        .filters button:hover {
-            background: #0b2342;
-            color: white;
-        }
-
-        .judgment-card {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 20px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-        }
-
-        .judgment-card h3 {
-            margin-top: 0;
-            font-size: 23px;
-        }
-
-        .case-link {
-            color: #0b2342;
-            text-decoration: none;
-        }
-
-        .case-link:hover {
-            text-decoration: underline;
-        }
-
-        .citation {
             font-weight: bold;
-            color: #667085;
-        }
-
-        .details {
-            line-height: 1.6;
-        }
-
-        .tag {
-            display: inline-block;
-            background: #eef2f7;
-            color: #0b2342;
-            padding: 6px 10px;
-            border-radius: 15px;
-            margin: 3px;
-            font-size: 13px;
-        }
-
-        .read-btn {
-            display: inline-block;
-            margin-top: 12px;
-            padding: 11px 18px;
-            background: #0b2342;
-            color: white;
-            text-decoration: none;
-            border-radius: 7px;
-        }
-
-        .read-btn:hover {
-            background: #163e6d;
         }
 
         footer {
+            margin-top: 60px;
             background: #0b2342;
             color: white;
             text-align: center;
-            padding: 25px;
-            margin-top: 40px;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            margin: 8px;
         }
 
     </style>
+
 </head>
 
 
 <body>
 
+
 <header>
 
     <h1>VIDHIKHOJ</h1>
 
-    <p>Supreme Court Judgments</p>
+    <p>
+        Search • Research • Understand the Law
+    </p>
 
 </header>
 
 
 <nav>
 
-    <a href="index.html">Home</a>
+    <a href="index.html">
+        Home
+    </a>
 
-    <a href="judgments.html">Supreme Court Judgments</a>
+    <a href="judgments.html">
+        Supreme Court Judgments
+    </a>
 
 </nav>
 
 
+<section class="hero">
+
+    <h2>
+        Legal Research Made Simple
+    </h2>
+
+    <p>
+        Explore judgments, legal research and
+        law-student friendly resources.
+    </p>
+
+</section>
+
+
 <div class="container">
 
-    <div class="title">
+    <h2 class="section-title">
+        Legal Articles
+    </h2>
 
-        <h2>Supreme Court Judgments</h2>
-
-        <p>
-            Search and explore important Supreme Court judgments.
-        </p>
-
-    </div>
-
-
-    <!-- Search -->
-
-    <div class="search-box">
-
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="Search judgment, case name or subject..."
-            onkeyup="searchJudgments()">
-
-        <button onclick="searchJudgments()">
-            Search
-        </button>
-
-    </div>
+    <p class="section-subtitle">
+        Read legal research, explanations and
+        law-student friendly articles.
+    </p>
 
 
-    <!-- Filters -->
+    <h2 class="section-title">
+        Latest Legal Research
+    </h2>
 
-    <div class="filters">
-
-        <button onclick="filterJudgments('all')">
-            All
-        </button>
-
-        <button onclick="filterJudgments('constitutional')">
-            Constitutional Law
-        </button>
-
-        <button onclick="filterJudgments('criminal')">
-            Criminal Law
-        </button>
-
-        <button onclick="filterJudgments('landmark')">
-            Landmark
-        </button>
-
-    </div>
+    <p class="section-subtitle">
+        Important cases and legal developments
+    </p>
 
 
-    <!-- Judgment 1 -->
-
-    <div class="judgment-card"
-         data-category="constitutional landmark">
-
-        <h3>
-
-            <a class="case-link"
-               href="https://indiankanoon.org/doc/110813550/"
-               target="_blank">
-
-                Shreya Singhal v. Union of India
-
-            </a>
-
-        </h3>
+    <div class="cards">
 
 
-        <p class="citation">
-            AIR 2015 SC 1523
-        </p>
+        <!-- Supreme Court Judgments -->
 
+        <a class="card"
+           href="judgments.html">
 
-        <p class="details">
+            <h3>
+                Supreme Court Judgments
+            </h3>
 
-            <strong>Date:</strong>
-            24 March 2015
+            <p>
+                Important Supreme Court judgments,
+                case laws and legal research.
+            </p>
 
-        </p>
-
-
-        <p class="details">
-
-            <strong>Subject:</strong>
-
-            Freedom of Speech and Expression,
-            Article 19(1)(a),
-            Information Technology Act,
-            Section 66A.
-
-        </p>
-
-
-        <span class="tag">
-            Constitutional Law
-        </span>
-
-        <span class="tag">
-            Article 19
-        </span>
-
-        <span class="tag">
-            IT Act
-        </span>
-
-        <span class="tag">
-            Landmark Judgment
-        </span>
-
-
-        <p class="details">
-
-            The Supreme Court considered the constitutional
-            validity of Section 66A of the Information Technology
-            Act, 2000 in relation to freedom of speech and
-            expression.
-
-        </p>
-
-
-        <a class="read-btn"
-           href="https://indiankanoon.org/doc/110813550/"
-           target="_blank">
-
-            Read Judgment
+            <span class="open-text">
+                Open Judgments →
+            </span>
 
         </a>
 
-    </div>
 
+        <!-- Landmark Cases -->
 
-    <!-- Judgment 2 -->
+        <a class="card"
+           href="judgments.html">
 
-    <div class="judgment-card"
-         data-category="constitutional landmark">
+            <h3>
+                Landmark Cases
+            </h3>
 
-        <h3>
+            <p>
+                Landmark Supreme Court decisions
+                and simplified case notes.
+            </p>
 
-            <a class="case-link"
-               href="https://indiankanoon.org/doc/257876/"
-               target="_blank">
-
-                Kesavananda Bharati v. State of Kerala
-
-            </a>
-
-        </h3>
-
-
-        <p class="citation">
-            (1973) 4 SCC 225
-        </p>
-
-
-        <p class="details">
-
-            <strong>Date:</strong>
-            24 April 1973
-
-        </p>
-
-
-        <p class="details">
-
-            <strong>Subject:</strong>
-
-            Basic Structure Doctrine and
-            Constitutional Amendments.
-
-        </p>
-
-
-        <span class="tag">
-            Constitutional Law
-        </span>
-
-        <span class="tag">
-            Basic Structure
-        </span>
-
-        <span class="tag">
-            Landmark Judgment
-        </span>
-
-
-        <p class="details">
-
-            The Supreme Court evolved the Basic Structure
-            Doctrine concerning the power to amend the
-            Constitution.
-
-        </p>
-
-
-        <a class="read-btn"
-           href="https://indiankanoon.org/doc/257876/"
-           target="_blank">
-
-            Read Judgment
+            <span class="open-text">
+                Explore Cases →
+            </span>
 
         </a>
 
-    </div>
 
+        <!-- Legal Articles -->
 
-    <!-- Judgment 3 -->
+        <a class="card"
+           href="#">
 
-    <div class="judgment-card"
-         data-category="criminal landmark">
+            <h3>
+                Legal Articles
+            </h3>
 
-        <h3>
+            <p>
+                Legal concepts, case analysis and
+                law-student friendly explanations.
+            </p>
 
-            <a class="case-link"
-               href="https://indiankanoon.org/doc/307021/"
-               target="_blank">
-
-                Bachan Singh v. State of Punjab
-
-            </a>
-
-        </h3>
-
-
-        <p class="citation">
-            (1980) 2 SCC 684
-        </p>
-
-
-        <p class="details">
-
-            <strong>Date:</strong>
-            9 May 1980
-
-        </p>
-
-
-        <p class="details">
-
-            <strong>Subject:</strong>
-
-            Death Penalty and the
-            "Rarest of Rare" Doctrine.
-
-        </p>
-
-
-        <span class="tag">
-            Criminal Law
-        </span>
-
-        <span class="tag">
-            Death Penalty
-        </span>
-
-        <span class="tag">
-            Landmark Judgment
-        </span>
-
-
-        <p class="details">
-
-            The Supreme Court laid down important principles
-            governing the imposition of the death penalty.
-
-        </p>
-
-
-        <a class="read-btn"
-           href="https://indiankanoon.org/doc/307021/"
-           target="_blank">
-
-            Read Judgment
+            <span class="open-text">
+                Coming Soon
+            </span>
 
         </a>
 
-    </div>
 
+    </div>
 
 </div>
 
@@ -495,81 +288,18 @@
 <footer>
 
     <p>
-        © 2026 VIDHIKHOJ
+        <strong>VIDHIKHOJ</strong>
     </p>
 
     <p>
-        Legal Research & Knowledge Platform
+        Search • Research • Understand the Law
+    </p>
+
+    <p>
+        © 2026 VIDHIKHOJ
     </p>
 
 </footer>
-
-
-<script>
-
-function searchJudgments() {
-
-    let input =
-        document.getElementById("searchInput")
-        .value
-        .toLowerCase();
-
-    let cards =
-        document.querySelectorAll(".judgment-card");
-
-    cards.forEach(function(card) {
-
-        let text =
-            card.innerText.toLowerCase();
-
-        if (text.includes(input)) {
-
-            card.style.display = "block";
-
-        } else {
-
-            card.style.display = "none";
-
-        }
-
-    });
-
-}
-
-
-function filterJudgments(category) {
-
-    let cards =
-        document.querySelectorAll(".judgment-card");
-
-    cards.forEach(function(card) {
-
-        if (category === "all") {
-
-            card.style.display = "block";
-
-        } else {
-
-            let categories =
-                card.dataset.category;
-
-            if (categories.includes(category)) {
-
-                card.style.display = "block";
-
-            } else {
-
-                card.style.display = "none";
-
-            }
-
-        }
-
-    });
-
-}
-
-</script>
 
 
 </body>
